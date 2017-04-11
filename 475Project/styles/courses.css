@@ -1,0 +1,19 @@
+.panel-body h4 {
+  margin-top: 0px;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.panel .panel-body {
+  padding: 0px;
+}
+
+table.sections-table {
+  margin-bottom: 0px;
+}
+
+table.sections-table tr:first-child th {
+  border-top: 0px;
+}

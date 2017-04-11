@@ -1,0 +1,144 @@
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">{{currentCourse.courseID}} {{currentSection.sectionID}}</h4>
+        </div>
+
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <form class="form-inline">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-btn">
+                                    <div class="btn btn-default no-hover-cursor">
+                                        Tag
+                                    </div>
+                                </div>
+                                <input ng-init="searchTags = ''" ng-model="searchTags" type="text" placeholder="Search tag" class="form-control" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-btn">
+                                    <div class="btn btn-default no-hover-cursor">
+                                        Course
+                                    </div>
+                                </div>
+                                <input ng-init="searchCourse = ''" ng-model="searchCourse" type="text" placeholder="Search course taken" class="form-control" />
+                            </div>
+                        </div>
+                        &nbsp; &nbsp; &nbsp;
+                        <label ng-init="isChecked = ''" style="font-weight: normal !important; margin-top:6px;">
+                          <input type="checkbox" ng-model="isChecked" ng-click="getStudentsAvailable(currentSection.startTime, currentSection.endTime, currentSection.days, isChecked)" />
+                          Available During Section
+                        </label>
+                        <br><div class="input-group" ng-init="showIsUndergrad = ''" style="margin-top: 10px;">
+                          <strong>Student Type: &nbsp;</strong>
+                            <label class="radio-inline">
+                                <input type="radio" ng-model="showIsUndergrad" name="studentTypeSwitcher" ng-value="{isUndergrad:'false'}" />
+                                Grad
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" ng-model="showIsUndergrad" name="studentTypeSwitcher" ng-value="{isUndergrad:'true'}" />
+                                Undergrad
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" ng-model="showIsUndergrad" name="studentTypeSwitcher" value="" checked="checked" />
+                                All
+                            </label>
+                        </div>
+
+                        <div class="input-group" ng-init="showIsAssigned = ''" style="margin-top: 10px;">
+                          <strong>&nbsp; &nbsp; &nbsp; Assignments: &nbsp;</strong>
+                            <label class="radio-inline">
+                                <input type="radio" ng-model="showIsAssigned" name="assignmentSwitcher" ng-value="{isAssigned:'true'}" />
+                                Assigned
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" ng-model="showIsAssigned" name="assignmentSwitcher" ng-value="{isAssigned:'false'}" />
+                                Unassigned
+                            </label>
+                            <label class="radio-inline">
+                                <input type="radio" ng-model="showIsAssigned" name="assignmentSwitcher" value="" checked="checked" />
+                                All
+                            </label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Type</th>
+                                <th>Tags</th>
+                                <th>Assign</th>
+                                <th>Hide</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="hoverable" ng-init="showExtraInfo = false" ng-click="showExtraInfo = !showExtraInfo" ng-repeat-start="student in currentStudents | filter:showIsUndergrad | hasTags:searchTags | courseTaken:searchCourse | filter:showIsAssigned track by student.firebaseId">
+                                <td>{{student.first_name}}</td>
+                                <td>{{student.last_name}}</td>
+                                <td><p ng-show="student.isUndergrad">Undergrad</p>
+                                <p ng-show="!student.isUndergrad">Graduate</p></td>
+                                <td>{{student.tags}}</td>
+                                <td>
+                                    <button ng-hide="student.isAssigned" id="assignStudent" class="btn btn-success btn-xs" ng-click="$event.stopPropagation(); assignCandidate($index, student.firebaseId, currentCourse.firebaseId, currentSection.sectionID)">
+                                        Assign candidate
+                                    </button>
+
+                                    <button ng-show="student.isAssigned" id="assignStudent" class="btn btn-danger btn-xs" ng-click="$event.stopPropagation(); removeCandidate($index, student.assignmentFbId, currentCourse.firebaseId)">
+                                        Remove candidate
+                                    </button>
+                                </td>
+                                <td>
+                                <a href="" ng-click="removeStudent(student.firebaseId)">
+                                  <button class="btn btn-warning btn-xs"> Hide </button>
+                                </a>
+                                </td>
+                            </tr>
+                            <tr ng-repeat-end ng-show="showExtraInfo">
+                                <td colspan="6" style="padding:0">
+                                    <table class="table table-condensed table-striped" style="padding:0 margin:0 !important">
+                                        <thead>
+                                            <tr>
+                                                <th>Course</th>
+                                                <th>Start Time</th>
+                                                <th>End Time</th>
+                                                <th>Days</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="(key, courseEntry) in student.schedule">
+                                                <td>{{courseEntry.id}}</td>
+                                                <td>{{courseEntry.start_time}}</td>
+                                                <td>{{courseEntry.end_time}}</td>
+                                                <td>{{prettifyDays(courseEntry.days)}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+
+    </div>
+</div>

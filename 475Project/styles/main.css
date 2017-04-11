@@ -1,0 +1,51 @@
+html {
+  background-color: #FFF !important;
+}
+
+.angular-material-form {
+  background-color: #FFF !important;
+}
+
+.no-hover-cursor:hover {
+  cursor: default !important;
+  background-color: #FFFFFF;
+  border-color: #CCC;
+}
+
+.float-right {
+  float: right;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0px;
+}
+
+.student-filters {
+  margin-bottom: 20px;
+}
+
+.inline-student-form-filters {
+  margin-right: 15px;
+}
+
+button:focus {outline:0;}
+
+tr:focus, td:focus {outline:0;}
+
+.btn, .btn:active, .btn:focus, input, input:active, input:focus, a:focus {
+  outline: 0 !important;
+  outline-style: none !important;
+  outline-width: 0 !important;
+}
+
+tr.hoverable:hover {
+  background-color: #E3E3E3;
+}
+
+.tag-space {
+  margin-right: 5px;
+}
+
+.no-margin-table {
+  margin: 0;
+}

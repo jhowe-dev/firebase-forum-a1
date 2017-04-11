@@ -1,0 +1,67 @@
+<h1>Final Assignments
+  <button ng-hide="content" type="button" style="float:right;" class="btn btn-primary" ng-csv="csvAssignmentsStudents" csv-header="getDataHeaderStudent()" filename="AssignmentsByStudent.csv">Export by Student</button>
+  <button ng-show="content" type="button" style="float:right;" class="btn btn-primary" ng-csv="csvAssignmentsCourses" csv-header="getDataHeaderCourse()" filename="AssignmentsByCourse.csv">Export by Course</button>
+</h1>
+<div class="row" style="margin-left:0px;">
+    <div class="btn-group" data-toggle="buttons">
+        <label class="btn btn-default btn-sm active" ng-click="coursePage()">
+            <input type="radio" ng-model="content">Courses
+        </label>
+        <label class="btn btn-default btn-sm" ng-click="studentsPage()">
+            <input type="radio" ng-model="content">Students
+        </label>
+    </div>
+  </div>
+  <br>
+<div class="panel panel-default" ng-repeat="finalAssignment in courseAssignments" ng-show="content">
+  <div class="panel-heading">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="panel-title">{{finalAssignment[0].courseID}}</h3>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <table class="table table-condensed table-striped sections-table">
+      <tr>
+        <th>Student Name</th>
+        <th>Section</th>
+        <th>Student ID</th>
+        <th>Remove Assignment</th>
+      </tr>
+      <tr ng-repeat="student in finalAssignment[1]">
+        <td>{{student.name}}</td>
+        <td>{{student.section}}</td>
+        <td>{{student.studentID}}</td>
+        <td><button class="btn btn-danger btn-xs" ng-click="undoFinalAssignment(finalAssignment[0].firebaseId, student.firebaseID, student.section)">Remove</button>
+      </tr>
+    </table>
+
+  </div>
+</div>
+
+<div class="panel panel-default" ng-hide="content">
+  <div class="panel-heading">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="panel-title">Students</h3>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body" ng-hide="content">
+    <table class="table table-condensed table-striped sections-table">
+      <tr>
+        <th>Student</th>
+        <th>Course</th>
+        <th>Section</th>
+        <th>Number of Students</th>
+      </tr>
+      <tr ng-repeat="student in assignedStudents">
+        <td>{{student[0]}}</td>
+        <td>{{student[1]}}</td>
+        <td>{{student[2]}}</td>
+        <td>{{student[3]}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

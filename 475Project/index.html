@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>TA/LA Matching</title>
+  <link rel="stylesheet" href="externals/bootstrap.css">
+  <link rel="stylesheet" href="externals/angular-material.min.css">
+  <link rel="stylesheet" href="externals/toastr.min.css">
+  <link rel="stylesheet" href="externals/select.css">
+
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/form.css">
+  <link rel="stylesheet" href="styles/courses.css">
+</head>
+
+<body ng-app="baseApp">
+  <div ng-include="'views/nav.html'"></div>
+
+  <!-- Allows router to substitute partials -->
+  <div class="container">
+    <div id="error-container" class="alert alert-danger" role="alert">
+      <strong>Authentication error</strong>:
+      Please login to view content and perform actions.
+    </div>
+    <div ng-view></div>
+  </div>
+
+  <!-- CDN Includes -->
+  <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+  <script src="externals/jquery.js"></script>
+  <script src="externals/angular.js"></script>
+  <script src="externals/angular-animate.min.js"></script>
+  <script src="externals/angular-aria.min.js"></script>
+  <script src="externals/angular-messages.min.js"></script>
+  <script src="externals/angular-route.js"></script>
+  <script src="externals/ng-csv.min.js"></script>
+  <script src="externals/angular-sanitize.min.js"></script>
+  <script src="externals/angular-sanitize.min.js.map"></script>
+  <script src="externals/bootstrap.js"></script>
+  <script src="externals/firebase.js"></script>
+  <script src="externals/toastr.min.js"></script>
+  <script src="externals/select.js"></script>
+  <script src="externals/bluebird.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="externals/angular-material.min.js"></script>
+
+  <!-- Local Scripts -->
+  <script src="js/angular/models/Student-model.js"></script>
+  <script src="js/angular/models/CourseTaking-model.js"></script>
+  <script src="js/angular/models/Grade-model.js"></script>
+  <script src="js/angular/models/Course-model.js"></script>
+  <script src="js/firebase-init.js"></script>
+  <script src="js/angular/app.js"></script>
+  <script src="js/angular/auth-service.js"></script>
+  <script src="js/angular/firebase-service.js"></script>
+  <script src="js/angular/router.js"></script>
+  <script src="js/angular/filters.js"></script>
+  <script src="js/angular/models/courseSection-model.js"></script>
+  <script src="js/angular/controllers/auth-controller.js"></script>
+  <script src="js/angular/controllers/home-controller.js"></script>
+  <script src="js/angular/controllers/add-student-controller.js"></script>
+  <script src="js/angular/controllers/edit-student-controller.js"></script>
+  <script src="js/angular/controllers/edit-course-controller.js"></script>
+  <script src="js/angular/controllers/add-course-controller.js"></script>
+  <script src="js/angular/controllers/courses-controller.js"></script>
+  <script src="js/angular/controllers/students-controller.js"></script>
+  <script src="js/angular/controllers/candidates-controller.js"></script>
+  <script src="js/angular/controllers/finalAssignments-controller.js"></script>
+
+</body>
+
+</html>

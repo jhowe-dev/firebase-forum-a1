@@ -1,0 +1,285 @@
+    <header class="jumbotron hero-spacer">
+        <h1>UD CS TA/LA Matcher</h1>
+        <p>Match students with TA/LA openings for each course section.  Select candidates, make assignments, and export the matching and student workload results as CSV files.</p>
+        </p>
+    </header>
+    <hr>
+    <div class="row">
+        <div class="col-lg-12">
+            <h3>Quicklinks</h3>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+                <img src="img/students-icon.jpg" alt="">
+                <div class="caption">
+                    <h3>Students</h3>
+                    <p>Explore and search through students in the system.</p>
+                    <p>
+                        <a href="#/students" class="btn btn-primary">View Students</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+                <img src="img/courses-icon.jpg" alt="">
+                <div class="caption">
+                    <h3>Courses</h3>
+                    <p>Explore courses and select TA/LA candidates for each course section.</p>
+                    <p>
+                        <a href="#/courses" class="btn btn-primary">View Courses</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+                <img src="img/candidates-icon.png" alt="">
+                <div class="caption">
+                    <h3>Candidates</h3>
+                    <p>See students currently marked as TA/LA candidates for each course section.</p>
+                    <p>
+                        <a href="#/candidates" class="btn btn-primary">View Candidates</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="thumbnail">
+                <img src="img/assignments-icon.png" alt="">
+                <div class="caption">
+                    <h3>Assignments</h3>
+                    <p>See the students assigned as TAs/LAs for each course section, view student workload, and export tables as CSV files.</p>
+                    <p>
+                        <a href="#/assignments" class="btn btn-primary">View Assignments</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<hr>
+
+<!--Instructions-->
+<div>
+<h1>Instructions</h1>
+<div class="panel-group" id="accordion">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="/CISC475-Project/views/home.html#collapse1">
+      Viewing/Filtering Students</a>
+    </h4>
+  </div>
+  <div id="collapse1" class="panel-collapse collapse in">
+    <div class="panel-body">
+      <p>
+        <ol>
+          <li>Select "Students" in top navbar</li>
+          <li>Click on a student's name to reveal more information, such as the student's schedule, grades, and tags</li>
+          <li>Use the search box to filter by tags</li>
+        </ol>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="/CISC475-Project/views/home.html#collapse2">
+      Adding Students</a>
+    </h4>
+  </div>
+  <div id="collapse2" class="panel-collapse collapse">
+    <div class="panel-body">
+      <p>
+        <ol>
+          <li>Select "Add Student" from the top navbar</li>
+          <li>Fill in the student's information using the form</li>
+          <li>Click the "Submit" button to add the student to the system</li>
+        </ol>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="/CISC475-Project/views/home.html#collapse3">
+      Editing Students</a>
+    </h4>
+  </div>
+  <div id="collapse3" class="panel-collapse collapse">
+    <div class="panel-body">
+      <p>
+        <ol>
+          <li>Select "Student" from the top navbar</li>
+          <li>Click on "Edit" to the right of the student's name you want to edit</li>
+          <li>Change information in the student's form</li>
+          <li>Click the "Submit" button to save your changes</li>
+        </ol>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="/CISC475-Project/views/home.html#collapse4">
+      Viewing/Editing Courses and Sections</a>
+    </h4>
+  </div>
+  <div id="collapse4" class="panel-collapse collapse">
+    <div class="panel-body">
+      <p>
+        <ol>
+          <li>Select "Courses" in top navbar</li>
+          <li>Click "Edit" to the right of the course whose information/section data you want to edit</li>
+          <li>Change information in the course's form</li>
+          <li>Click the "Submit" button to save your changes</li>
+        </ol>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="/CISC475-Project/views/home.html#collapse5">
+      Adding Courses</a>
+    </h4>
+  </div>
+  <div id="collapse5" class="panel-collapse collapse">
+    <div class="panel-body">
+      <p>
+        <ol>
+          <li>Select "Add Course" from the top navbar</li>
+          <li>Fill in the course's information using the form</li>
+          <li>To add a course section, click "Add Section"</li>
+          <li>Click the "Submit" button to add the course to the system</li>
+        </ol>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="/CISC475-Project/views/home.html#collapse6">
+      Assigning TA/LA Candidates for Courses</a>
+    </h4>
+  </div>
+  <div id="collapse6" class="panel-collapse collapse">
+    <div class="panel-body">
+      <p>
+        <ol>
+          <li>Select “Courses” from the top navbar</li>
+          <li>Find your desired course (each is listed in their own table)</li>
+          <li>Click on the button labeled “Assign Candidates” listed to the right of your desired section</li>
+          <li>Use the filters (search boxes and buttons) to search through the list of students</li>
+          <li>Once a student is found, click the green button labeled “Assign Candidate” listed in that student’s row</li>
+        </ol>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="/CISC475-Project/views/home.html#collapse7">
+      Viewing TA/LA Candidates for Courses</a>
+    </h4>
+  </div>
+  <div id="collapse7" class="panel-collapse collapse">
+    <div class="panel-body">
+      <p>
+        <ol>
+          <li>Select “Candidates” from the top navbar</li>
+        </ol>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="/CISC475-Project/views/home.html#collapse8">
+      Assigning Students as TAs/LAs for Courses</a>
+    </h4>
+  </div>
+  <div id="collapse8" class="panel-collapse collapse">
+    <div class="panel-body">
+      <p>
+        <ol>
+          <li>Follow instructions for “Assigning TA/LA Candidates for Courses” for the students</li>
+          <li>Select “Candidates” from the top navbar</li>
+          <li>The candidates you selected in step one are now visible on this page</li>
+          <li>Click the green button labeled “Finalize Assignment” in the rows of the desired students</li>
+        </ol>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="/CISC475-Project/views/home.html#collapse9">
+      Viewing TA/LA Assignments for Courses</a>
+    </h4>
+  </div>
+  <div id="collapse9" class="panel-collapse collapse">
+    <div class="panel-body">
+      <p>
+        <ol>
+          <li>Select "Final Assignments" from the top navbar</li>
+        </ol>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="/CISC475-Project/views/home.html#collapse10">
+      Viewing Student Workload</a>
+    </h4>
+  </div>
+  <div id="collapse10" class="panel-collapse collapse">
+    <div class="panel-body">
+      <p>
+        <ol>
+          <li>Select “Final Assignments” from the top navbar</li>
+          <li>Select the “Students” tab below the page header</li>
+        </ol>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#accordion" href="/CISC475-Project/views/home.html#collapse11">
+      Exporting TA/LA Assignments and Student Workload as CSV Files</a>
+    </h4>
+  </div>
+  <div id="collapse11" class="panel-collapse collapse">
+    <div class="panel-body">
+      <p>
+        <ol>
+          <li>Select “Final Assignments” from the top navbar</li>
+          <li>Select the either the "Courses" or “Students” tab below the page header to select the table you would like to export</li>
+          <li>Click the blue export button on the top right of the page to download the table as a CSV file</li>
+        </ol>
+      </p>
+    </div>
+  </div>
+</div>
+
